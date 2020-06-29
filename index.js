@@ -34,26 +34,26 @@ app.get('/grades/:studentId', (req, res) =>
 
 app.post('/register', (req, res) => {
     // check email and username valid before sending 200
-    res.status(200).send();
+    res.status(201).send();
 })
 
 app.post('/grades', (req, res) => {
     console.log(req.body); // json parse error not sure why
-    if (req.query.id == null || req.query.id === "" )
+
+    if (req.body.studentId == null || req.body.studentId === "" )
     {
         res.status(400).send();
     }
-    else if (req.query.grade === 'a' ||
-        req.query.grade === 'b' ||
-        req.query.grade === 'c' ||
-        req.query.grade === 'd' ||
-        req.query.grade === 'f')
+    else if (req.body.grade === 'a' ||
+        req.body.grade === 'b' ||
+        req.body.grade === 'c' ||
+        req.body.grade === 'd' ||
+        req.body.grade === 'f')
         {
-            res.status(200).send(req.query.grade);
             try
             {
-                var item = db.Find(req.query.id);
-                item.AddGrade(req.query.grade);
+                var item = db.Find(req.body.studentId);
+                item.AddGrade(req.body.grade);
                 res.status(200).send();
             }
             catch
