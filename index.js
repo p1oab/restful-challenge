@@ -32,8 +32,13 @@ app.get('/grades/:studentId', (req, res) =>
     res.json(db.Find(req.params.studentId).GetGrades());
 })
 
+app.post('/register', (req, res) => {
+    // check email and username valid before sending 200
+    res.status(200).send();
+})
+
 app.post('/grades', (req, res) => {
-    console.log(req.body);
+    console.log(req.body); // json parse error not sure why
     if (req.query.id == null || req.query.id === "" )
     {
         res.status(400).send();
