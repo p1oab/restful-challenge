@@ -1,0 +1,23 @@
+{
+  "name": "restful-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p1oab/restful-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p1oab/restful-challenge/issues"
+  },
+  "homepage": "https://github.com/p1oab/restful-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
